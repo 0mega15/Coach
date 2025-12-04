@@ -2,11 +2,13 @@ package com.example.coach.model;
 
 import junit.framework.TestCase;
 
+import java.util.Date;
+
 public class ProfilTest extends TestCase {
 
-    private Profil profilMaigre = new Profil (45, 170, 20, 0);
-    private Profil profilNormal = new Profil (70, 180, 40, 1);
-    private Profil profilGras = new Profil (67, 165, 35, 0);
+    private Profil profilMaigre = new Profil (45, 170, 20, 0, new Date());
+    private Profil profilNormal = new Profil (70, 180, 40, 1, new Date());
+    private Profil profilGras = new Profil (67, 165, 35, 0, new Date());
 
     public void testGetImg() {
         assertEquals(17.9, profilMaigre.getImg(), 0.1);

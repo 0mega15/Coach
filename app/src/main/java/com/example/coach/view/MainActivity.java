@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements ICalculView {
 
     private EditText txtPoids, txtTaille, txtAge;
     private RadioButton rdHomme;
+    private RadioButton rdFemme;
     private TextView lblIMG;
     private ImageView imgSmiley;
     private Button btnCalc;
@@ -52,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements ICalculView {
         txtTaille = findViewById(R.id.txtTaille);
         txtAge = findViewById(R.id.txtAge);
         rdHomme = findViewById(R.id.rdHomme);
+        rdFemme = findViewById(R.id.rdFemme);
         lblIMG = findViewById(R.id.lblIMG);
         imgSmiley = findViewById(R.id.imgSmiley);
         btnCalc = findViewById(R.id.btnCalc);
@@ -88,5 +90,18 @@ public class MainActivity extends AppCompatActivity implements ICalculView {
         String texte = String.format("%.01f", img) + " : IMG " + message;
         lblIMG.setText(texte);
         lblIMG.setTextColor(normal ? Color.GREEN : Color.RED);
+    }
+
+    @Override
+    public void remplirChamps(Integer poids, Integer taille, Integer age, Integer sexe) {
+        txtPoids.setText(poids.toString());
+        txtTaille.setText(taille.toString());
+        txtAge.setText(age.toString());
+        if (sexe == 0){
+            rdFemme.setChecked(true);
+        }
+        else {
+            rdHomme.setChecked(true);
+        }
     }
 }

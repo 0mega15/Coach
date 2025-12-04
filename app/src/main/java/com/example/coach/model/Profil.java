@@ -1,6 +1,8 @@
 package com.example.coach.model;
 
 
+import java.util.Date;
+
 import kotlin.text.UStringsKt;
 
 public class Profil {
@@ -16,12 +18,14 @@ public class Profil {
     private int sexe;
     private double img;
     private int indice;
+    private Date dateMesure;
 
-    public Profil(int poids, int taille, int age, int sexe) {
+    public Profil(int poids, int taille, int age, int sexe, Date dateMesure) {
         this.taille = taille;
         this.poids = poids;
         this.age = age;
         this.sexe = sexe;
+        this.dateMesure = dateMesure;
         this.img = calculImg();
         this.indice = calculIndice();
     }
@@ -57,5 +61,21 @@ public class Profil {
     }
     public Boolean normal(){
         return indice == 1;
+    }
+    public int getPoids() {
+        return poids;
+    }
+    public int getTaille() {
+        return taille;
+    }
+    public int getAge() {
+        return age;
+    }
+    public int getSexe() {
+        return sexe;
+    }
+
+    public Date getDateMesure() {
+        return dateMesure;
     }
 }
