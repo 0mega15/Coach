@@ -74,7 +74,6 @@ public class Profil {
     public int getSexe() {
         return sexe;
     }
-
     public Date getDateMesure() {
         return dateMesure;
     }
