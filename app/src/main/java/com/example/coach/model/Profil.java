@@ -16,9 +16,10 @@ public class Profil {
     private int taille;
     private int age;
     private int sexe;
-    private double img;
-    private int indice;
+    private transient double img;
+    private transient int indice;
     private Date dateMesure;
+
 
     public Profil(int poids, int taille, int age, int sexe, Date dateMesure) {
         this.taille = taille;
@@ -74,7 +75,6 @@ public class Profil {
     public int getSexe() {
         return sexe;
     }
-
     public Date getDateMesure() {
         return dateMesure;
     }
