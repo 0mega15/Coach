@@ -1,11 +1,11 @@
 package com.example.coach.model;
 
-
+import java.io.Serializable;
 import java.util.Date;
 
 import kotlin.text.UStringsKt;
 
-public class Profil {
+public class Profil implements Serializable {
     private static final int MIN_FEMME = 25;
     private static final int MAX_FEMME = 30;
     private static final int MIN_HOMME = 15;
@@ -52,7 +52,7 @@ public class Profil {
     }
 
     public double getImg(){
-        return img;
+        return calculImg();
     }
     public String getMessage(){
         return MESSAGE[indice];
